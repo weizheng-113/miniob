@@ -37,4 +37,3 @@ RC CreateTableExecutor::execute(SQLStageEvent *sql_event)
   RC rc = session->get_current_db()->create_table(table_name, attribute_count, create_table_stmt->attr_infos().data());
 
   return rc;
-}
