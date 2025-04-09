@@ -608,11 +608,7 @@ RC Table::update_record(Record &record, const char *attr_name, Value *value)
   return rc;
 }
 
-/*
-  这里有几个问题不清晰:
-    1.为什么要先做sync把缓冲区中的内容刷盘
-    2.删除数据文件时，也会把缓冲区中数据文件的的内容清空，但是删除索引文件和元数据文件时并没有清空缓冲区中的内容
-*/
+
 RC Table::drop(const char *dir)
 {
   // 1.drop index first
