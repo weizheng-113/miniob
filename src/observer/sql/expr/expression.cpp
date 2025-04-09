@@ -244,7 +244,7 @@ ArithmeticExpr::ArithmeticExpr(ArithmeticExpr::Type type, Expression *left, Expr
 ArithmeticExpr::ArithmeticExpr(ArithmeticExpr::Type type, unique_ptr<Expression> left, unique_ptr<Expression> right)
     : arithmetic_type_(type), left_(std::move(left)), right_(std::move(right))
 {}
-
+//typecast
 
 AttrType ArithmeticExpr::value_type() const
 {
