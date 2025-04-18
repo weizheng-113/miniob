@@ -642,6 +642,8 @@ bool InternalIndexNodeHandler::validate(const KeyComparator &comparator, DiskBuf
     return false;
   }
 
+  
+
   const int node_size = size();
   for (int i = 2; i < node_size; i++) {
     if (comparator(__key_at(i - 1), __key_at(i)) >= 0) {
