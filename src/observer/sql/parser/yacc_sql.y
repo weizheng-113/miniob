@@ -151,8 +151,8 @@ ArithmeticExpr *create_arithmetic_expression(ArithmeticExpr::Type type,
 %type <expression_list>     select_attr
 %type <relation_list>       rel_list
 //%type <rel_attr_list>       attr_list
-%type <expression>          expression
 %type <expression_list>     expression_list
+%type <expression>          expression
 %type <sql_node>            calc_stmt
 %type <sql_node>            select_stmt
 %type <sql_node>            insert_stmt
