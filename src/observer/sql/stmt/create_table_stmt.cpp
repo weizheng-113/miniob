@@ -22,6 +22,7 @@ RC CreateTableStmt::create(Db *db, const CreateTableSqlNode &create_table, Stmt 
 
   // create table select
   if (0 != select_sql.project_exprs.size()) {
+
     Stmt *select_stmt = nullptr;
     std::vector<AttrInfoSqlNode> attr_infos;
 
@@ -48,6 +49,7 @@ RC CreateTableStmt::create(Db *db, const CreateTableSqlNode &create_table, Stmt 
         FieldExpr *field_expr = dynamic_cast<FieldExpr*>(attr_expr.get());
         FieldMeta field = field_expr->get_field_meta();
         attr_info.length = field.len();
+
         attr_info.nullable = field.nullable();
       } else {
         if (ExprType::VALUE == attr_expr->type()) {
@@ -96,3 +98,5 @@ RC CreateTableStmt::create(Db *db, const CreateTableSqlNode &create_table, Stmt 
   sql_debug("create table statement: table name %s", create_table.relation_name.c_str());
   return RC::SUCCESS;
 }
+
+
